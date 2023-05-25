@@ -41,6 +41,17 @@ pipeline {
             }
         }
         
+        
+        stage("helmdeploy"){
+            steps{
+
+                script{
+                    sh "helm upgrade first --install mychart --namespace liontech-dev --set image.tag=$BUILD_NUMBER"
+                }
+            }
+        }
+        
+        
         stage ("Helm package") {
             steps {
                     sh "helm package springboot"
