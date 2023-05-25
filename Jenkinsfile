@@ -26,6 +26,7 @@ pipeline {
             steps {
                 script {
                     docker.build registry
+                    dockerImage.tag("$BUILD_NUMBER")
                 }
             }
         }
