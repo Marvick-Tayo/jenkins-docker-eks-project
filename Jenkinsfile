@@ -40,7 +40,13 @@ pipeline {
                 }
             }
         }
-        
+        stage('connnect'){
+            steps{
+                withKubeConfig(caCertificate: '', clusterName: '', contextName: '', credentialsId: 'prince', namespace: '', restrictKubeConfigAccess: false, serverUrl: '') {
+                
+}
+            }
+        }
         
         stage("helmdeploy"){
             steps{
