@@ -1,4 +1,9 @@
 pipeline {
+
+    tools{
+
+        maven 'maven3.9.1'
+    }
     agent any
 
     environment {
