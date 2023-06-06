@@ -16,15 +16,15 @@ pipeline {
             }
         }
         
-        stage ("Build JAR") {
+        stage("Build JAR") {
             steps {
                 sh "mvn clean install"
             }
         }
         
-        stage ("Build Image") {
+        stage("Build Image") {
             steps {
-                script {
+                script{
                     dockerImage = docker.build registry
                     dockerImage.tag("$BUILD_NUMBER")
                 }
