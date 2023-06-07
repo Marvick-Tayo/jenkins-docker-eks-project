@@ -18,10 +18,10 @@ spec:
       -name:   my-springboot-app
       image: 618348145639.dkr.ecr.us-east-1.amazonaws.com/liontech-demo-automation:30
       imagePullPolicy: Always
-        ports:
-        - containerPort: 8085
-          name: http
-          protocol: TCP
+      ports:
+      - containerPort: 8085
+        name: http
+        protocol: TCP
 # service type loadbalancer       
 ---
 apiVersion: v1
