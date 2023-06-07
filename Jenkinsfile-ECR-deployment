@@ -7,7 +7,7 @@ pipeline {
     agent any
 
     environment {
-        registry = "618348145639.dkr.ecr.ca-central-1.amazonaws.com/liontechbootcamp19"
+        registry = "618348145639.dkr.ecr.ca-central-1.amazonaws.com/liontechbootcamp20"
     }
     stages {
         stage('Checkout') {
@@ -37,14 +37,13 @@ pipeline {
             steps {
                 script {
                     sh 'aws ecr get-login-password --region ca-central-1 | docker login --username AWS --password-stdin 618348145639.dkr.ecr.ca-central-1.amazonaws.com'
-                    sh '618348145639.dkr.ecr.ca-central-1.amazonaws.com/liontechbootcamp19:$BUILD_NUMBER'
+                    sh '618348145639.dkr.ecr.ca-central-1.amazonaws.com/liontechbootcamp20:$BUILD_NUMBER'
                     
                 }
             }
         }
 
-// aws_access_key_id = AKIAY76DL5PTV56MLLRL
-// aws_secret_access_key = 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
+
 
         
 stage('EKS Deploy') {
