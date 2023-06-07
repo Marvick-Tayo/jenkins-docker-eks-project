@@ -1,0 +1,29 @@
+apiVersion: v1
+clusters:
+- cluster:
+    certificate-authority-data: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUMvakNDQWVhZ0F3SUJBZ0lCQURBTkJna3Foa2lHOXcwQkFRc0ZBREFWTVJNd0VRWURWUVFERXdwcmRXSmwKY201bGRHVnpNQjRYRFRJek1EVXlOakF6TURjek4xb1hEVE16TURVeU16QXpNRGN6TjFvd0ZURVRNQkVHQTFVRQpBeE1LYTNWaVpYSnVaWFJsY3pDQ0FTSXdEUVlKS29aSWh2Y05BUUVCQlFBRGdnRVBBRENDQVFvQ2dnRUJBTUY3CkdVNng5ZkVaVmV0S2Q2STFiWWdqS3BJWkVRY0wrOU5JTGJHeGdJcTMzYy8xYVFLZWRxaytwQUkxenJ0WGdBOEIKbXdZZXNTTjJrWjcxbVJvT1QxNEpTSzg2UkplSEpDSDROYVc1OVFBT0FwaEhyVkRFVHFBM3ZKYktWeFkrb3FocgpYdTRnSm9acVJvRjM1UEtNOUJKMnQ4dUNkQURVQVdVd3Y4VUp3RDhKWjRmaWtKeHVhMmowQno5clFiUEdNb2s1CmdpOU91ajVLclBDUlBXSnRiQ01XOXpzTHlLKzRsbGRBSnpocEZtVGkxbHpReEF0R2hEV3hUN0NkZ09ZMGdKTlQKdUlDbEFaMWZ6QlRmeGJCbjZrekpaRFNOTllJaUw3Z1J2MEp5bjBYYzlKN3lLcVlwRGp2RHdLZ3oybUFiK2lUWQptSFJyUmpGakxCdFNVWTUraitFQ0F3RUFBYU5aTUZjd0RnWURWUjBQQVFIL0JBUURBZ0trTUE4R0ExVWRFd0VCCi93UUZNQU1CQWY4d0hRWURWUjBPQkJZRUZIbXhBb0Yzck1KR1Z0WmU4dGwvVXNoK0dodlhNQlVHQTFVZEVRUU8KTUF5Q0NtdDFZbVZ5Ym1WMFpYTXdEUVlKS29aSWh2Y05BUUVMQlFBRGdnRUJBQTVHOGM0TnBoTUIxV1Y2bmFuZQovaGNFZHJ4cjM4cWlDNUFmUzZUaFVqS2YxQzd5OEVIeHJiclowbDBrWUkxUDdVdXFZS2dhOEtNbTM2cVNJSlBoClR0eDY5MzJRWnEzYWlZWEJ3c25Xdng1UmVocnpRSFVSbElmdWE4a1kybHk3SUtiOFJYMEN4eTM3aXNXT1NBc24KbW5Cb0VzdmNJN0tsZDVrZDZxRG5yVTVRc3RYU3ZwOGVGT0ZJNVFCdjhsYlNQUlR2NEFkN1E5cHRHOERYdytScwp2cjR4cHZqb0JZSHNiN001ZzJOQTVKOURvTk5PZit0YVFza01scmJwMWhnUUlEQ2UzdjZKc0tyWmFEa0lzM0NBClhiNWpsZWxEbmN0OTR2YllXakdkays5bzNWK1ZyS3k1SnR4b3ZSblY5dFo0R2ZrZlIyVkpBclhDbC9mQW5vU2sKdkFrPQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==
+    server: https://511392C440FC628B8D099BF25226D24C.gr7.us-east-1.eks.amazonaws.com
+  name: arn:aws:eks:us-east-1:618348145639:cluster/class20bootcamp
+contexts:
+- context:
+    cluster: arn:aws:eks:us-east-1:618348145639:cluster/class20bootcamp
+    user: arn:aws:eks:us-east-1:618348145639:cluster/class20bootcamp
+  name: arn:aws:eks:us-east-1:618348145639:cluster/class20bootcamp
+current-context: arn:aws:eks:us-east-1:618348145639:cluster/class20bootcamp
+kind: Config
+preferences: {}
+users:
+- name: arn:aws:eks:us-east-1:618348145639:cluster/class20bootcamp
+  user:
+    exec:
+      apiVersion: client.authentication.k8s.io/v1beta1
+      args:
+      - --region
+      - us-east-1
+      - eks
+      - get-token
+      - --cluster-name
+      - class20bootcamp
+      - --output
+      - json
+      command: aws
