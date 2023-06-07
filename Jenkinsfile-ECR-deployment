@@ -28,6 +28,7 @@ pipeline {
                     // dockerImage = docker.build registry
                     // dockerImage.tag("$BUILD_NUMBER")
                     sh 'docker build -t testapp .'
+                    sh 'docker tag $BUILD_NUMBER'
                 }
             }
         }
