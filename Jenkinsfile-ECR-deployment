@@ -40,5 +40,15 @@ pipeline {
                 }
             }
         }
+
+
+        stage('EKS Deploy') {
+            steps {
+                withAWS(credentials: 'AWS_CREDENTIALS_ID', region: 'us-east-1') {
+                  script {
+                    sh ('aws eks update-kubeconfig --name class20bootcamp --region us-east-1')
+                    sh "kubectl  apply -f  kubernetes-manifests"
+                }
+                }
             }
 }
