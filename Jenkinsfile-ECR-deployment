@@ -49,7 +49,7 @@ stage('EKS Deploy') {
             steps {
                  withKubeCredentials(kubectlCredentials: [[caCertificate: '', clusterName: 'class20bootcamp', contextName: '', credentialsId: 'kubeconfig', namespace: '', serverUrl: '']]) {
                   script {
-                    //sh ('aws eks update-kubeconfig --name class20bootcamp --region us-east-1')
+                    sh ('aws eks update-kubeconfig --name class20bootcamp --region us-east-1')
                     sh "kubectl  apply -f  kubernetes-manifests"
                 }
                 }
